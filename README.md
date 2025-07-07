@@ -2,7 +2,6 @@
 
 초등학교 우유급식 신청을 위한 디지털 가정통신문 시스템입니다.
 
-
 ## 🌟 주요 기능
 
 ### 📝 학부모용 신청서 (`index.html`)
@@ -197,4 +196,59 @@ headers: {
 
 - **개인정보 보호**: 서명 데이터는 base64로 인코딩되어 저장
 - **접근 제한**: 구글 시트 공유 설정으로 접근 권한 관리
-- **데이
+- **데이터 검증**: 클라이언트 및 서버 사이드 유효성 검사
+
+## 🚀 배포 방법
+
+### GitHub Pages 배포
+```bash
+# 1. GitHub 저장소 생성
+# 2. 파일 업로드
+# 3. Settings → Pages → Source: Deploy from a branch
+# 4. Branch: main → Save
+```
+
+### 로컬 서버 실행
+```bash
+# Python 3
+python -m http.server 8000
+
+# Node.js (http-server)
+npx http-server
+```
+
+## 🤝 기여하기
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 지원
+
+문제가 발생하거나 질문이 있으시면:
+
+- **Issues**: [GitHub Issues](https://github.com/yourusername/milk-application-system/issues)
+- **Email**: your.email@example.com
+- **문서**: [Wiki](https://github.com/yourusername/milk-application-system/wiki)
+
+## 📄 라이센스
+
+이 프로젝트는 MIT 라이센스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
+
+## 🙏 감사의 말
+
+- Google Apps Script와 Google Sheets의 강력한 기능
+- 오픈소스 커뮤니티의 지원과 영감
+- 교육 현장의 디지털 전환을 위한 모든 노력들
+
+---
+
+<div align="center">
+
+**⭐ 이 프로젝트가 도움이 되셨다면 Star를 눌러주세요! ⭐**
+
+Made with ❤️ for education
+
+</div>
