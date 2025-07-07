@@ -546,11 +546,13 @@
         function saveToGoogleSheets(data) {
             showLoading(true);
             hideMessages();
-
+        
+            // ✅ CORS 문제 해결: Content-Type을 text/plain으로 변경
             fetch(GOOGLE_SCRIPT_URL, {
+                redirect: "follow",  // 추가
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain;charset=utf-8',  // ⭐ 변경: application/json → text/plain
                 },
                 body: JSON.stringify(data)
             })
@@ -575,6 +577,7 @@
                 console.error('Error:', error);
             });
         }
+
 
         function showLoading(show) {
             document.getElementById('loadingMessage').style.display = show ? 'block' : 'none';
