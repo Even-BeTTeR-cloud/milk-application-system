@@ -461,33 +461,68 @@
             }
         }
 
-        function loadData() {
-            if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-                // 설정이 안된 경우 예시 데이터 표시
-                allApplications = [];
-                filteredApplications = [];
-                updateDisplay();
-                return;
-            }
+        // index.html의 saveToGoogleSheets 함수 수정
+function saveToGoogleSheets(data) {
+    showLoading(true);
+    hideMessages();
 
-            fetch(GOOGLE_SCRIPT_URL + '?action=get')
-                .then(response => response.json())
-                .then(result => {
-                    if (result.success) {
-                        allApplications = result.data || [];
-                        filteredApplications = [...allApplications];
-                        updateDisplay();
-                    } else {
-                        console.error('데이터 로드 실패:', result.message);
-                        showError('데이터를 불러올 수 없습니다: ' + result.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('네트워크 오류:', error);
-                    // 네트워크 오류 시 조용히 처리 (자동 새로고침이므로)
-                });
+    // ✅ CORS 문제 해결: Content-Type을 text/plain으로 변경
+    fetch(GOOGLE_SCRIPT_URL, {
+        redirect: "follow",  // 추가
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8',  // ⭐ 변경: application/json → text/plain
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        showLoading(false);
+        if (result.success) {
+            showSuccess('희망서가 성공적으로 제출되었습니다!');
+            document.getElementById('milkForm').reset();
+            clearSignature();
+            // 라디오 선택 해제
+            document.querySelectorAll('.radio-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+        } else {
+            showError('제출 중 오류가 발생했습니다: ' + result.message);
         }
+    })
+    .catch(error => {
+        showLoading(false);
+        showError('네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.');
+        console.error('Error:', error);
+    });
+}
 
+// teacher.html의 loadData 함수도 동일하게 수정
+    function loadData() {
+        if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+            allApplications = [];
+            filteredApplications = [];
+            updateDisplay();
+            return;
+        }
+    
+        // ✅ GET 요청은 CORS 문제가 없으므로 그대로 유지
+        fetch(GOOGLE_SCRIPT_URL + '?action=get')
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    allApplications = result.data || [];
+                    filteredApplications = [...allApplications];
+                    updateDisplay();
+                } else {
+                    console.error('데이터 로드 실패:', result.message);
+                    showError('데이터를 불러올 수 없습니다: ' + result.message);
+                }
+            })
+            .catch(error => {
+                console.error('네트워크 오류:', error);
+            });
+    }
         function refreshData() {
             showLoading(true);
             loadData();
