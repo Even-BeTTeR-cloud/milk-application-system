@@ -10,41 +10,52 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         .container {
             background: white;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
             border-bottom: 3px solid #4CAF50;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            font-size: 2.2em;
+        }
+        .school-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
             color: #555;
+            font-size: 16px;
         }
         input[type="text"], input[type="number"], select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 2px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
             box-sizing: border-box;
+            transition: border-color 0.3s;
         }
         input[type="text"]:focus, input[type="number"]:focus, select:focus {
             border-color: #4CAF50;
             outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
         }
         .row {
             display: flex;
@@ -55,132 +66,213 @@
         }
         .signature-section {
             margin: 30px 0;
-            padding: 20px;
+            padding: 25px;
             border: 2px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         .signature-canvas {
             border: 2px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             background: white;
             cursor: crosshair;
             display: block;
-            margin: 10px auto;
+            margin: 15px auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .signature-controls {
             text-align: center;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         .btn {
-            padding: 10px 20px;
-            margin: 0 5px;
+            padding: 12px 25px;
+            margin: 0 8px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
-            transition: background-color 0.3s;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .btn-clear {
-            background-color: #f44336;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
             color: white;
-        }
-        .btn-clear:hover {
-            background-color: #da190b;
         }
         .btn-keyboard {
-            background-color: #2196F3;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: white;
-        }
-        .btn-keyboard:hover {
-            background-color: #0b7dda;
         }
         .keyboard-input {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 18px;
+            border-radius: 8px;
+            font-size: 20px;
             font-family: cursive;
             text-align: center;
-            margin: 10px 0;
+            margin: 15px 0;
             display: none;
+            background: white;
         }
         .radio-group {
             display: flex;
-            gap: 20px;
-            margin: 15px 0;
+            gap: 30px;
+            margin: 20px 0;
+            justify-content: center;
         }
         .radio-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            padding: 15px 25px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+            background: white;
+        }
+        .radio-item:hover {
+            border-color: #4CAF50;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .radio-item input[type="radio"] {
             width: auto;
             margin: 0;
+            transform: scale(1.2);
         }
         .radio-item label {
             margin: 0;
-            font-weight: normal;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .radio-item.selected {
+            border-color: #4CAF50;
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
         }
         .submit-btn {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 18px 30px;
+            font-size: 20px;
+            font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
             cursor: pointer;
             width: 100%;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            margin-top: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
         }
         .submit-btn:hover {
-            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
         }
         .submit-btn:disabled {
-            background-color: #cccccc;
+            background: #cccccc;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
         .preview-section {
-            margin: 20px 0;
-            padding: 15px;
+            margin: 25px 0;
+            padding: 20px;
             border: 2px solid #4CAF50;
-            border-radius: 10px;
-            background-color: #f0f8f0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
         }
         .preview-canvas {
             border: 1px solid #ccc;
             background: white;
             display: block;
-            margin: 10px auto;
+            margin: 15px auto;
             max-width: 100%;
+            border-radius: 5px;
         }
-        .error-message {
-            color: #f44336;
-            font-size: 14px;
-            margin-top: 5px;
+        .success-message, .error-message {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
         }
         .success-message {
-            background-color: #dff0d8;
-            color: #3c763d;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border: 1px solid #d6e9c6;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .error-message {
+            background: linear-gradient(135deg, #f8d7da, #f1b0b7);
+            color: #721c24;
+            border: 2px solid #f1b0b7;
+        }
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4CAF50;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .setup-notice {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>우유급식 희망서</h1>
+        <h1>🥛 우유급식 희망서</h1>
+        <div class="school-info">학교명 · 2025년도</div>
+        
+        <!-- 설정 안내 (관리자용) -->
+        <div id="setupNotice" class="setup-notice">
+            ⚠️ <strong>관리자 설정 필요:</strong> Google Apps Script 웹 앱 URL을 설정해주세요.<br>
+            현재 URL: <code id="currentUrl">설정되지 않음</code>
+        </div>
         
         <form id="milkForm">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="grade">학년:</label>
+                        <label for="grade">📚 학년:</label>
                         <select id="grade" required>
                             <option value="">선택하세요</option>
                             <option value="1">1학년</option>
@@ -194,67 +286,92 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="class">반:</label>
-                        <input type="number" id="class" min="1" max="20" required>
+                        <label for="class">🏫 반:</label>
+                        <input type="number" id="class" min="1" max="20" required placeholder="반 번호">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="number">번호:</label>
-                        <input type="number" id="number" min="1" max="40" required>
+                        <label for="number">🔢 번호:</label>
+                        <input type="number" id="number" min="1" max="40" required placeholder="출석번호">
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="studentName">학생 이름:</label>
-                <input type="text" id="studentName" required>
+                <label for="studentName">👨‍🎓 학생 이름:</label>
+                <input type="text" id="studentName" required placeholder="학생 이름을 입력하세요">
             </div>
 
             <div class="form-group">
-                <label for="parentName">학부모 이름:</label>
-                <input type="text" id="parentName" required>
+                <label for="parentName">👨‍👩‍👧‍👦 학부모 이름:</label>
+                <input type="text" id="parentName" required placeholder="학부모 이름을 입력하세요">
             </div>
 
             <div class="signature-section">
-                <h3>학부모 서명</h3>
+                <h3>✍️ 학부모 서명</h3>
                 <div class="signature-controls">
-                    <button type="button" class="btn btn-keyboard" onclick="toggleKeyboardInput()">키보드 입력</button>
-                    <button type="button" class="btn btn-clear" onclick="clearSignature()">서명 지우기</button>
+                    <button type="button" class="btn btn-keyboard" onclick="toggleKeyboardInput()">⌨️ 키보드 입력</button>
+                    <button type="button" class="btn btn-clear" onclick="clearSignature()">🗑️ 서명 지우기</button>
                 </div>
                 
                 <input type="text" id="keyboardSignature" class="keyboard-input" placeholder="여기에 서명을 입력하세요">
                 <canvas id="signatureCanvas" class="signature-canvas" width="400" height="150"></canvas>
                 
                 <div class="preview-section">
-                    <h4>서명 미리보기:</h4>
+                    <h4>👀 서명 미리보기:</h4>
                     <canvas id="previewCanvas" class="preview-canvas" width="200" height="75"></canvas>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>우유급식 희망 여부:</label>
+                <label>🥛 우유급식 희망 여부:</label>
                 <div class="radio-group">
-                    <div class="radio-item">
+                    <div class="radio-item" onclick="selectRadio('hope')">
                         <input type="radio" id="hope" name="milkPreference" value="희망" required>
-                        <label for="hope">희망</label>
+                        <label for="hope">✅ 희망</label>
                     </div>
-                    <div class="radio-item">
+                    <div class="radio-item" onclick="selectRadio('nohope')">
                         <input type="radio" id="nohope" name="milkPreference" value="불희망" required>
-                        <label for="nohope">불희망</label>
+                        <label for="nohope">❌ 불희망</label>
                     </div>
                 </div>
             </div>
 
-            <button type="submit" class="submit-btn">제출하기</button>
+            <button type="submit" class="submit-btn" id="submitBtn">📨 제출하기</button>
         </form>
 
+        <div id="loadingMessage" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            데이터를 구글 시트에 전송중입니다...
+        </div>
+
         <div id="successMessage" class="success-message" style="display: none;">
-            희망서가 성공적으로 제출되었습니다!
+            ✅ 희망서가 성공적으로 제출되었습니다!
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;">
         </div>
     </div>
 
     <script>
+        // ⚠️ 여기에 Google Apps Script 웹 앱 URL을 붙여넣으세요
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby24LpkFHP7cQZVDRXGGicWAJyI9FgnZZ50MBA9WWLjgzBcW_ACGyZ1eBdXbOVwbZii/exec';
+        
+        // 설정 상태 확인
+        document.addEventListener('DOMContentLoaded', function() {
+            const setupNotice = document.getElementById('setupNotice');
+            const currentUrlElement = document.getElementById('currentUrl');
+            
+            if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                setupNotice.style.display = 'block';
+                currentUrlElement.textContent = '설정되지 않음';
+            } else {
+                setupNotice.style.display = 'none';
+                currentUrlElement.textContent = GOOGLE_SCRIPT_URL;
+            }
+        });
+        
         // 서명 캔버스 설정
         const canvas = document.getElementById('signatureCanvas');
         const ctx = canvas.getContext('2d');
@@ -263,6 +380,20 @@
         
         let isDrawing = false;
         let isKeyboardMode = false;
+
+        // 라디오 버튼 선택 효과
+        function selectRadio(radioId) {
+            const radio = document.getElementById(radioId);
+            radio.checked = true;
+            
+            // 모든 radio-item에서 selected 클래스 제거
+            document.querySelectorAll('.radio-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            // 선택된 항목에 selected 클래스 추가
+            radio.closest('.radio-item').classList.add('selected');
+        }
 
         // 캔버스 이벤트 리스너
         canvas.addEventListener('mousedown', startDrawing);
@@ -294,7 +425,7 @@
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 3;
             ctx.lineCap = 'round';
             ctx.strokeStyle = '#000';
             ctx.lineTo(x, y);
@@ -333,11 +464,11 @@
             
             if (isKeyboardMode) {
                 keyboardInput.style.display = 'block';
-                button.textContent = '마우스 그리기';
+                button.innerHTML = '🖱️ 마우스 그리기';
                 canvas.style.display = 'none';
             } else {
                 keyboardInput.style.display = 'none';
-                button.textContent = '키보드 입력';
+                button.innerHTML = '⌨️ 키보드 입력';
                 canvas.style.display = 'block';
             }
             updatePreview();
@@ -382,16 +513,22 @@
 
             // 서명 확인
             if (isKeyboardMode && !formData.signature) {
-                alert('서명을 입력해주세요.');
+                showError('서명을 입력해주세요.');
                 return;
             }
             
             if (!isKeyboardMode && !hasSignature()) {
-                alert('서명을 그려주세요.');
+                showError('서명을 그려주세요.');
                 return;
             }
 
-            saveData(formData);
+            // Google Sheets URL 확인
+            if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                showError('관리자가 Google Apps Script URL을 설정해야 합니다.');
+                return;
+            }
+
+            saveToGoogleSheets(formData);
         });
 
         function hasSignature() {
@@ -406,22 +543,62 @@
             return false;
         }
 
-        function saveData(data) {
-            // 실제 서버가 있다면 여기서 서버로 전송
-            // 현재는 로컬 스토리지에 저장 (데모용)
-            const existingData = JSON.parse(localStorage.getItem('milkApplications') || '[]');
-            existingData.push(data);
-            localStorage.setItem('milkApplications', JSON.stringify(existingData));
-            
-            // 성공 메시지 표시
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('milkForm').reset();
-            clearSignature();
-            
-            // 3초 후 메시지 숨기기
+        function saveToGoogleSheets(data) {
+            showLoading(true);
+            hideMessages();
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                showLoading(false);
+                if (result.success) {
+                    showSuccess('희망서가 성공적으로 제출되었습니다!');
+                    document.getElementById('milkForm').reset();
+                    clearSignature();
+                    // 라디오 선택 해제
+                    document.querySelectorAll('.radio-item').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                } else {
+                    showError('제출 중 오류가 발생했습니다: ' + result.message);
+                }
+            })
+            .catch(error => {
+                showLoading(false);
+                showError('네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.');
+                console.error('Error:', error);
+            });
+        }
+
+        function showLoading(show) {
+            document.getElementById('loadingMessage').style.display = show ? 'block' : 'none';
+            document.getElementById('submitBtn').disabled = show;
+        }
+
+        function showSuccess(message) {
+            const element = document.getElementById('successMessage');
+            element.textContent = '✅ ' + message;
+            element.style.display = 'block';
             setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 3000);
+                element.style.display = 'none';
+            }, 5000);
+        }
+
+        function showError(message) {
+            const element = document.getElementById('errorMessage');
+            element.textContent = '❌ ' + message;
+            element.style.display = 'block';
+        }
+
+        function hideMessages() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
         }
 
         // 초기 미리보기 설정
