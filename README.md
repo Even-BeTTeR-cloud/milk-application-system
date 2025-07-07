@@ -2,9 +2,6 @@
 
 초등학교 우유급식 신청을 위한 디지털 가정통신문 시스템입니다.
 
-[![GitHub License](https://img.shields.io/github/license/yourusername/milk-application-system)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/milk-application-system)](https://github.com/yourusername/milk-application-system/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/milk-application-system)](https://github.com/yourusername/milk-application-system/issues)
 
 ## 🌟 주요 기능
 
